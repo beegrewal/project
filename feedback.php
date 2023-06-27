@@ -48,12 +48,22 @@
                         <label class="sr-only">Message</label>
                         <textarea class="form-control" rows="7" placeholder="Write Your Message" name="msg"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-info text" name='submit'>Submit Feedback</button>
+                    <button type="submit" class="btn btn-info text" name='submit' value='submit' id='send' onclick='msg()'>Submit Feedback</button>
                 </form>
             </div>
             <!-- /.col-md-8 -->
         </div>
         <!-- /.row --> 
+  
+        <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {  
+     echo '<div class="alert alert-success text-center" role="alert">Thank you for your message!</div>';
+    exit();
+}
+?> 
+
+
+
     </div>
     <!-- /.container -->
 </div>
@@ -74,8 +84,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
     
-
+    <script src='msg.js'></script>
 <script>
+   
 
 import self from life 
 if(self.tired){
@@ -84,6 +95,9 @@ if(self.tired){
 else{
     keepcoding()
 }
+
+
+
 </script>
 
 
