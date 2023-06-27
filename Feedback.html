@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
@@ -28,7 +26,7 @@
            <div class="container">       
         <div class="row d-flex justify-content-center">
             <div class="col-md-8 col-md-offset-2">
-                <form action='#' method='post'>
+                <form>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -48,7 +46,7 @@
                         <label class="sr-only">Message</label>
                         <textarea class="form-control" rows="7" placeholder="Write Your Message" name="msg"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-info text" name='submit'>Submit Feedback</button>
+                    <button type="submit" class="btn btn-info text">Submit Feedback</button>
                 </form>
             </div>
             <!-- /.col-md-8 -->
@@ -94,22 +92,3 @@ else{
 
 </body>
 </html>
-
-<?php
-$server = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'weather';
-$conn = mysqli_connect($server, $user, $password, $database);
-if(isset($_POST['submit']))
-{
-    $a = $_POST['name'];
-    $b = $_POST['mail'];
-    $c = $_POST['msg'];
-
-    $query = "INSERT INTO feedaback(name, mail, msg) values('$a','$b','$c')";
-    mysqli_query($conn, $query);
-}
-
-
-?>

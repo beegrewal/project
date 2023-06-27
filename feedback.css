@@ -1,0 +1,55 @@
+body{
+    background-image: url(bbbb.jpg);
+    background-repeat: no-repeat;
+    background-size:auto;
+}
+ 
+.formm {
+    background: #f7f7f7;
+}
+
+.ptb {
+    padding-top: 60px;
+    padding-bottom: 70px;
+} 
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.formm .form-control {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #d3d3d3;
+    background: transparent;
+    font-family: 'Roboto';
+}
+
+
+.formm form button.btn {
+    margin: 30px auto;
+    display: block;
+    padding: 11px 32px;
+    background: #4285f4;
+    border: 1px solid #4285f4;
+
+}
+
+.contact_rd{
+border-radius: 25px;
+}
+
+.ff{
+    font-family: Georgia;
+}
+
+

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Forecast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="weather icon.webp">
+</head>
+
+<body>
+
+    <!--Preloader-->
+    <div class="preloader"></div>
+    <!--Ed Preloader-->
+
+    <!--Navbar-->
+
+    <div class="nav">
+        <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Weather Forecast
+                    <lord-icon src="https://cdn.lordicon.com/qtiwxsuo.json" trigger="hover"
+                        colors="primary:#4be1ec,secondary:#cb5eee" style="width:20px;height: 20px;">
+                    </lord-icon>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Weather Forecast<lord-icon
+                                src="https://cdn.lordicon.com/qtiwxsuo.json" trigger="hover"
+                                colors="primary:#4be1ec,secondary:#cb5eee" style="width:40px;height:40px">
+                            </lord-icon></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="team.html" target="_blank">Team
+                                    <lord-icon src="https://cdn.lordicon.com/mjmrmyzg.json" trigger="hover"
+                                        colors="primary:#4be1ec,secondary:#cb5eee" style="width:40px;height:40px">
+                                    </lord-icon> </a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="contact.html" target="_blank">Contact Us
+                                    <lord-icon src="https://cdn.lordicon.com/amxnacxd.json" trigger="hover"
+                                        colors="primary:#4be1ec,secondary:#cb5eee" style="width:40px;height:40px">
+                                    </lord-icon>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="Feedback.php" target="_blank">Feedback
+                                    <lord-icon
+                                    src="https://cdn.lordicon.com/sdhhsgeg.json"
+                                    trigger="hover"
+                                    colors="primary:#4be1ec,secondary:#cb5eee"
+                                    style="width:40px;height:40px">
+                                </lord-icon></a>
+                            </li>
+                        </ul>
+                       
+                   
+                 
+                        <form class="d-flex mt-5" role="search">
+                            <input id="place" class="form-control me-2" type="search"  placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <!--End Navbar-->
+
+    <!--Weather Card-->
+    <div class="container">
+        <h1 class="my-4 text-center">Weather Of <span id="placeName"></span> </h1>
+        <main>
+
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Temperature</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title"><small class="text-body-secondary fw-light"></small>
+                            <span id="temp"></span>&#x2103;
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Min-Temp is <span id="min_temp"></span> (&#x2103;)</li>
+                            <li>Max-Temp is <span id="max_temp"></span> (&#x2103;)</li>
+                            <li>Feels-Like is <span id="feels_like"></span> (&#x2103;)</li>
+                            <li>Humidity is <span id="humidity"></span> (&#x2103;)</li>
+                            <li>Wind-Speed is <span id="wind_speed"></span> (KM/H)</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!--Weather Card-->
+
+    <!--Table -->
+
+
+    <h2 class="display-6 text-center mb-4">Weather Of Other Cities</h2>
+
+    <div class="table-responsive">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th style="width: 9%;"> Cities (UK)</th>
+
+                    <th style="width: 9%;"> Temp (&#x2103;)</th>
+
+                    <th style="width: 20%;"> Feels_like (&#x2103;)</th>
+
+                    <th style="width: 20%;"> Humidity (&#x2103;)</th>
+
+                    <th style="width: 20%;"> Max_temp (&#x2103;)</th>
+
+                    <th style="width: 20%;"> Min_temp (&#x2103;)</th>
+
+                    <th style="width: 20%;"> Wind_Speed (KM/H)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="text-start">Rishikesh </th>
+
+                    <td id="temp1"></td>
+
+                    <td id="feels_like1"></td>
+                    <td id="humidity1"></td>
+                    <td id="max_temp1"></td>
+                    <td id="min_temp1"></td>
+
+                    <td id="wind_speed1"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-start">Haridwar</th>
+
+                    <td id="temp2"></td>
+
+                    <td id="feels_like2"></td>
+                    <td id="humidity2"></td>
+                    <td id="max_temp2"></td>
+                    <td id="min_temp2"></td>
+
+                    <td id="wind_speed2"></td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <th scope="row" class="text-start">Nainital</th>
+
+                    <td id="temp3"></td>
+
+                    <td id="feels_like3"></td>
+                    <td id="humidity3"></td>
+                    <td id="max_temp3"></td>
+                    <td id="min_temp3"></td>
+
+                    <td id="wind_speed3"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-start">Uttarkashi</th>
+
+                    <td id="temp4"></td>
+
+                    <td id="feels_like4"></td>
+                    <td id="humidity4"></td>
+                    <td id="max_temp4"></td>
+                    <td id="min_temp4"></td>
+
+                    <td id="wind_speed4"></td>
+
+            </tbody>
+        </table>
+    </div>
+    </main>
+    </div>
+
+
+
+
+
+    <!--End Table-->
+
+    <!--footer-->
+
+    <footer class="new_footer_area bg_color">
+        <div class="new_footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+
+                            <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true"
+                                _lpchecked="1">
+                                <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                                <button class="btn btn_get btn_get_two" type="submit"><a href="mailto:bantus090@gmail.com" class="btn" target="_blank">Subscribe</a></button>
+                                <p class="mchimp-errmessage" style="display: none;"></p>
+                                <p class="mchimp-sucmessage" style="display: none;"></p>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="footer_bg">
+                <div class="footer_bg_one"></div>
+                <div class="footer_bg_two"></div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-7">
+                        <p class="mb-0 f_400">© B S Grewal 2023 All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-5 text-right">
+                        <p>Made with <i class="icon_heart"></i> Us <a href="team.html" target="_blank">Our Team</a></p>
+
+                    </div>
+                </div>
+    </footer>
+    <!--footer-->
+
+    <!--JS Sources-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="rishikesh.js"></script>
+    <script src="haridwar.js"></script>
+    <script src="nainital.js"></script>
+    <script src="uttarkashi.js"></script>
+    <script src="loader.js"></script>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+   
+   
+    </script>
+
+    <!--End JS Sources-->
+
+
+
+</body>
+
+</html>
